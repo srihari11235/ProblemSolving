@@ -1,7 +1,7 @@
 ﻿# Balanced Brackets
 
 
-# Problem Statement: 
+## Problem Statement: 
 
 A bracket is considered to be any one of the following characters: (, ), {, }, [, or ].
 
@@ -27,7 +27,7 @@ For each string, return YES or NO.
 
 
 
-# Solution: 
+## Solution: 
 
 Read each character from the input string and push it into a stack. While inserting each character check where the top most value in stack is the opposite bracket for the character to be inserted, if it is the same POP from stack. If at the end of the string the stack still contains elements then the brackets are not balanced.
 
