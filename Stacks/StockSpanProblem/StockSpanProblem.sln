@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockSpanProblem", "StockSpanProblem\StockSpanProblem.csproj", "{41664B1F-50BE-4544-9B5E-397588B84A45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{8B3C65DA-118D-49B7-91F4-D5076C058CBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41664B1F-50BE-4544-9B5E-397588B84A45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41664B1F-50BE-4544-9B5E-397588B84A45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41664B1F-50BE-4544-9B5E-397588B84A45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41664B1F-50BE-4544-9B5E-397588B84A45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B3C65DA-118D-49B7-91F4-D5076C058CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B3C65DA-118D-49B7-91F4-D5076C058CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B3C65DA-118D-49B7-91F4-D5076C058CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B3C65DA-118D-49B7-91F4-D5076C058CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9282C59-BEAC-4745-A60A-2A8CE3891D1A}
+	EndGlobalSection
+EndGlobal
