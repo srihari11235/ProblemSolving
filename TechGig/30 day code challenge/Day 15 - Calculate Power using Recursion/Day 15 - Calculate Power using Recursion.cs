@@ -6,17 +6,23 @@ using System.Linq;
 class CandidateCode {
     static void Main(String[] args) {
 	
-        var code = new CandidateCode();
+        try
+        {
+            var code = new CandidateCode();
 
-        var numbers = code.GetInput();
+            var numbers = code.GetInput();
 
-        var number = numbers.Item1;
-        var power = numbers.Item2;
+            var number = numbers.Item1;
+            var power = numbers.Item2;
 
-        var result = code.CalculatePower(number, power);
+            var result = code.CalculatePower(number, power);
 
-        Console.Write(result);
-
+            Console.Write(result);
+        }
+        catch(Exception ex)
+        {
+            Console.Write(ex.ToString());
+        }
     }
 
     private Tuple<int, int> GetInput(){

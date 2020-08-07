@@ -5,44 +5,48 @@ using System.Linq;
 class CandidateCode {
     static void Main(String[] args) {
         
-        var code = new CandidateCode();
-        var numbers = code.ReadNumbers();
-        var numberA = numbers.Item1;
-        var numberB = numbers.Item2;
-        var sumOfNumberA = 0;
-        var sumOfNumberB = 0;
-
-       // Console.WriteLine(numberA);
-       // Console.WriteLine(numberB);
-        while(numberA != 0 || numberB != 0)
+        try
         {
-            if(numberA != 0)
+            var code = new CandidateCode();
+            var numbers = code.ReadNumbers();
+            var numberA = numbers.Item1;
+            var numberB = numbers.Item2;
+            var sumOfNumberA = 0;
+            var sumOfNumberB = 0;
+
+            while(numberA != 0 || numberB != 0)
             {
-                var digitA = code.GetNextDigit(numberA);
-                
-                sumOfNumberA += digitA;
-                
-                numberA = numberA / 10;
+                if(numberA != 0)
+                {
+                    var digitA = code.GetNextDigit(numberA);
+                    
+                    sumOfNumberA += digitA;
+                    
+                    numberA = numberA / 10;
 
-            }
+                }
 
-            if(numberB != 0)
-            {
-                var digitB = code.GetNextDigit(numberB);
-                
-                sumOfNumberB += digitB;
-                
-                numberB = numberB/ 10;
-            }
-       }
+                if(numberB != 0)
+                {
+                    var digitB = code.GetNextDigit(numberB);
+                    
+                    sumOfNumberB += digitB;
+                    
+                    numberB = numberB/ 10;
+                }
+        }
 
-        if(sumOfNumberA == sumOfNumberB)
-            Console.Write("Equal");
-        else if(sumOfNumberA > sumOfNumberB)
-            Console.Write(numbers.Item1);
-        else
-            Console.Write(numbers.Item2);
-
+            if(sumOfNumberA == sumOfNumberB)
+                Console.Write("Equal");
+            else if(sumOfNumberA > sumOfNumberB)
+                Console.Write(numbers.Item1);
+            else
+                Console.Write(numbers.Item2);
+        }
+        catch(Exception ex)
+        {
+            Console.Write(ex.ToString());
+        }
     }
     private Tuple<int, int> ReadNumbers()
     {

@@ -5,32 +5,39 @@ using System.Linq;
 class CandidateCode {
     static void Main(String[] args) {
         
-        var code = new CandidateCode();
-
-        var numberOfElements = code.ReadNumberOfElments();
-        var numbers = code.ReadNumbers();
-        var result = "True";
-
-        numbers.Sort();
-        
-        for(int i = 0; i < numbers.Count; i++)
+        try
         {
-            if(i == 0 )
-                continue;
-            
-            if(numbers[i] >= 0 && (numbers[i] - numbers[i-1] != 1))
-            {
-                result = "False"; 
-                break; 
-            }
-            else if(numbers[i] < 0 && (numbers[i] - numbers[i - 1] != 1))         
-            {
-                result = "False"; 
-                break; 
-            }
-        }
+            var code = new CandidateCode();
 
-        Console.Write(result);
+            var numberOfElements = code.ReadNumberOfElments();
+            var numbers = code.ReadNumbers();
+            var result = "True";
+
+            numbers.Sort();
+            
+            for(int i = 0; i < numbers.Count; i++)
+            {
+                if(i == 0 )
+                    continue;
+                
+                if(numbers[i] >= 0 && (numbers[i] - numbers[i-1] != 1))
+                {
+                    result = "False"; 
+                    break; 
+                }
+                else if(numbers[i] < 0 && (numbers[i] - numbers[i - 1] != 1))         
+                {
+                    result = "False"; 
+                    break; 
+                }
+            }
+
+            Console.Write(result);
+        }
+        catch(Exception ex)
+        {
+            Console.Write(ex.ToString());
+        }
     }
 
     private int ReadNumberOfElments()

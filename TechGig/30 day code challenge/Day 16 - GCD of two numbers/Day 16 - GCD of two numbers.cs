@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 class CandidateCode {
-    static void Main(String[] args) {
-	
-        var code = new CandidateCode();
-        var numbers = code.ReadInput();
+    static void Main(String[] args) {	
+        try
+        {
+            var code = new CandidateCode();
+            var numbers = code.ReadInput();
         
-        var gcd = code.GetGCD(numbers[0], numbers[1]);
+            var gcd = code.GetGCD(numbers[0], numbers[1]);
 
-        Console.Write(gcd);     
-
+            Console.Write(gcd);     
+        }
+        catch(Exception ex)
+        {
+            Console.Write(ex.ToString());
+        }        
     }
 
     private List<long> ReadInput()

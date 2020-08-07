@@ -4,18 +4,25 @@ using System.IO;
 using System.Linq;
 class CandidateCode {
     static void Main(String[] args) {
-        
-        var code = new CandidateCode();
 
-        var numberOfElements = code.ReadNumberOfElments();
-        var numbers = code.ReadNumbers();
+        try
+        {        
+            var code = new CandidateCode();
 
-        numbers.Sort();
+            var numberOfElements = code.ReadNumberOfElments();
+            var numbers = code.ReadNumbers();
 
-        var minNumber = numbers.First();
-        var maxNumber = numbers.Last();
+            numbers.Sort();
 
-        Console.Write(minNumber * maxNumber);
+            var minNumber = numbers.First();
+            var maxNumber = numbers.Last();
+
+            Console.Write(minNumber * maxNumber);
+        }
+        catch(Exception ex)
+        {
+            Console.Write(ex.ToString());
+        }
 
     }
 

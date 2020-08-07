@@ -16,6 +16,7 @@ class CandidateCode {
                 decimalValue += reminder * base1;
                 base1 = base1 * 2;
             }
+            
             Console.Write(decimalValue);
     }
 }

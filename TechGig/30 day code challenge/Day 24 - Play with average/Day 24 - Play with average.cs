@@ -5,38 +5,45 @@ using System.Linq;
 class CandidateCode {
     static void Main(String[] args) {
 	
-        var code = new CandidateCode();
-
-        var numberOfElements = code.ReadNumberOfElments();
-        var numbers = code.ReadNumbers();
-        var countOfEvenNumbers = 0;
-        var countOfOddNumbers = 0;
-        decimal sumOfEvenNumbers = 0;
-        decimal sumOfOddNumbers = 0; 
-        decimal avgOfEvenNumbers = 0;
-        decimal avgOfOddNumbers = 0;
-
-        for(int i=0; i < numbers.Count; i++)
+        try
         {
-            if(code.IsNumberEven(numbers[i]))
+            var code = new CandidateCode();
+
+            var numberOfElements = code.ReadNumberOfElments();
+            var numbers = code.ReadNumbers();
+            var countOfEvenNumbers = 0;
+            var countOfOddNumbers = 0;
+            decimal sumOfEvenNumbers = 0;
+            decimal sumOfOddNumbers = 0; 
+            decimal avgOfEvenNumbers = 0;
+            decimal avgOfOddNumbers = 0;
+
+            for(int i=0; i < numbers.Count; i++)
             {
-                sumOfEvenNumbers += numbers[i];
-                countOfEvenNumbers++;                
+                if(code.IsNumberEven(numbers[i]))
+                {
+                    sumOfEvenNumbers += numbers[i];
+                    countOfEvenNumbers++;                
+                }
+                else 
+                {
+                    sumOfOddNumbers += numbers[i];
+                    countOfOddNumbers++;
+                }
             }
-            else 
-            {
-                sumOfOddNumbers += numbers[i];
-                countOfOddNumbers++;
-            }
+
+            //Codintions for when all numbers are either event or odd
+            if(countOfEvenNumbers != 0)
+                avgOfEvenNumbers = sumOfEvenNumbers/countOfEvenNumbers;
+            if(countOfOddNumbers != 0)    
+                avgOfOddNumbers = sumOfOddNumbers/countOfOddNumbers;
+
+            Console.Write(Math.Round(avgOfEvenNumbers, MidpointRounding.AwayFromZero) + Math.Round(avgOfOddNumbers, MidpointRounding.AwayFromZero));
         }
-
-        //Codintions for when all numbers are either event or odd
-        if(countOfEvenNumbers != 0)
-            avgOfEvenNumbers = sumOfEvenNumbers/countOfEvenNumbers;
-        if(countOfOddNumbers != 0)    
-            avgOfOddNumbers = sumOfOddNumbers/countOfOddNumbers;
-
-        Console.Write(Math.Round(avgOfEvenNumbers, MidpointRounding.AwayFromZero) + Math.Round(avgOfOddNumbers, MidpointRounding.AwayFromZero));
+        catch(Exception ex)
+        {
+            Console.Write(ex.ToString());
+        }
     }
 
     private int ReadNumberOfElments()

@@ -5,22 +5,29 @@ using System.Linq;
 class CandidateCode {
     static void Main(String[] args) {
 	
-        var code = new CandidateCode();
-
-        var numberOfElements = code.ReadNumberOfElments();
-        var numbers = code.ReadNumbers();
-        var sumOfOddNumbers = 0;
-        var sumOfEvenNumbers = 0;
-
-        foreach(var number in numbers)
+        try
         {
-            if(code.IsNumberEven(number))
-                sumOfEvenNumbers += number;
-            else
-                sumOfOddNumbers += number;
-        }
+            var code = new CandidateCode();
 
-        Console.Write(sumOfEvenNumbers * sumOfOddNumbers);
+            var numberOfElements = code.ReadNumberOfElments();
+            var numbers = code.ReadNumbers();
+            var sumOfOddNumbers = 0;
+            var sumOfEvenNumbers = 0;
+
+            foreach(var number in numbers)
+            {
+                if(code.IsNumberEven(number))
+                    sumOfEvenNumbers += number;
+                else
+                    sumOfOddNumbers += number;
+            }
+
+            Console.Write(sumOfEvenNumbers * sumOfOddNumbers);
+        }
+        catch(Exception ex)
+        {
+            Console.Write(ex.ToString());
+        }
 
     }
 

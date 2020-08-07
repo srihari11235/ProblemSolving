@@ -4,30 +4,36 @@ using System.IO;
 using System.Linq;
 class CandidateCode {
     static void Main(String[] args) {
-	   
-        var code = new CandidateCode();
-        
-        var numberOfElements = code.ReadNumberOfElments();
-        var numbers = code.ReadNumbers();
-        var sumOfOddNumbers = 0;
-        var sumOfEvenNumbers = 0;
+	    try
+        {
+            var code = new CandidateCode();
+            
+            var numberOfElements = code.ReadNumberOfElments();
+            var numbers = code.ReadNumbers();
+            var sumOfOddNumbers = 0;
+            var sumOfEvenNumbers = 0;
 
-       for(int i = 0; i < numbers.Count; i++)
-       {
-            if(i == 0)                            
-                sumOfEvenNumbers += numbers[i];                           
-            else if(i == 1)                            
-                sumOfOddNumbers += numbers[i];                                      
-            else if(code.IsIndexEven(i))                            
-                sumOfEvenNumbers += numbers[i];                            
-            else                            
-                sumOfOddNumbers += numbers[i];                            
-       }
+            for(int i = 0; i < numbers.Count; i++)
+            {
+                    if(i == 0)                            
+                        sumOfEvenNumbers += numbers[i];                           
+                    else if(i == 1)                            
+                        sumOfOddNumbers += numbers[i];                                      
+                    else if(code.IsIndexEven(i))                            
+                        sumOfEvenNumbers += numbers[i];                            
+                    else                            
+                        sumOfOddNumbers += numbers[i];                            
+            }
 
-       if(sumOfEvenNumbers < sumOfOddNumbers)
-        Console.Write(sumOfOddNumbers - sumOfEvenNumbers);
-       else
-         Console.Write(sumOfEvenNumbers - sumOfOddNumbers);
+            if(sumOfEvenNumbers < sumOfOddNumbers)
+                Console.Write(sumOfOddNumbers - sumOfEvenNumbers);
+            else
+                Console.Write(sumOfEvenNumbers - sumOfOddNumbers);  
+        }
+        catch(Exception ex)
+        {
+            Console.Write(ex.ToString());
+        }
 
     }
 

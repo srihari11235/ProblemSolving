@@ -5,28 +5,35 @@ using System.Linq;
 class CandidateCode {
     static void Main(String[] args) {
         
-        var code = new CandidateCode();
-
-        var number = code.ReadNumber();
-        var sumOfOddNumber = 0;
-        var sumOfEvenNumber = 0;
-
-        while(number != 0)
+        try
         {
-            var digit = code.GetNextDigit(number);
+            var code = new CandidateCode();
 
-            if(code.IsDigitEven(digit))
-                sumOfEvenNumber += digit;
+            var number = code.ReadNumber();
+            var sumOfOddNumber = 0;
+            var sumOfEvenNumber = 0;
+
+            while(number != 0)
+            {
+                var digit = code.GetNextDigit(number);
+
+                if(code.IsDigitEven(digit))
+                    sumOfEvenNumber += digit;
+                else
+                    sumOfOddNumber += digit;
+                
+                number = number /10;
+            }
+
+            if(sumOfEvenNumber > sumOfOddNumber)
+                Console.Write(sumOfEvenNumber - sumOfOddNumber);
             else
-                sumOfOddNumber += digit;
-            
-            number = number /10;
+                Console.Write(sumOfOddNumber - sumOfEvenNumber);
         }
-
-        if(sumOfEvenNumber > sumOfOddNumber)
-            Console.Write(sumOfEvenNumber - sumOfOddNumber);
-        else
-            Console.Write(sumOfOddNumber - sumOfEvenNumber);
+        catch(Exception ex)
+        {
+            Console.Write(ex.ToString());
+        }
     }
 
 

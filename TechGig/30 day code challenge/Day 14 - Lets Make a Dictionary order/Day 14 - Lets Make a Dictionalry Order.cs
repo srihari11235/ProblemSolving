@@ -4,20 +4,27 @@ using System.IO;
 using System.Linq;
 class CandidateCode {
     static void Main(String[] args) {
-     
-     var code = new CandidateCode();     
-     var numberOfWords = code.ReadNumberOfWords();
-     var words = new List<string>();
+        
+        try
+        {
+            var code = new CandidateCode();     
+            var numberOfWords = code.ReadNumberOfWords();
+            var words = new List<string>();
 
-     for(var count = 0; count < numberOfWords; count++)
-     {
-       var word = Console.ReadLine();
-       words.Add(word);      
-     }
+            for(var count = 0; count < numberOfWords; count++)
+            {
+            var word = Console.ReadLine();
+            words.Add(word);      
+            }
 
-     words.Sort();
-     
-     code.Print(words);
+            words.Sort();
+            
+            code.Print(words);
+        }
+        catch(Exception ex)
+        {
+            Console.Write(ex.ToString());
+        }
     }
 
     private int ReadNumberOfWords()
